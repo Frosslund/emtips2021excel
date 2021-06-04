@@ -1,23 +1,9 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="first">
+      <iframe title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTvvNpDI4XiBW60jXS2lMdi9DZvokA_Y2tbnZGrpsbbnOjLYmKVut_E8nkno1iUg2mOrqNJRrnU5QVZ/pubhtml?widget=true&amp;headers=false"></iframe>
     </div>
   );
 }
