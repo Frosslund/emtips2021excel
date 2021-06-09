@@ -11,7 +11,7 @@ const StartView = () => {
         return <Completionist />;
     } else {
         // Render a countdown
-        return <span>0{days}:0{hours}:{minutes}:{seconds}</span>;
+        return <span>0{days}:{hours}:{minutes}:{seconds}</span>;
     }
     };
     return (
