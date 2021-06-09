@@ -1,11 +1,19 @@
-import './App.css';
+import './App.scss';
+import { BrowserRouter } from 'react-router-dom';
+import Router from './Router';
+import Navbar from './Navbar';
+import Footer from './Footer';
 
-function App() {
+const App = () => {
   return (
-    <div className="first">
-      <iframe title="excel" src="https://docs.google.com/spreadsheets/d/e/2PACX-1vTvvNpDI4XiBW60jXS2lMdi9DZvokA_Y2tbnZGrpsbbnOjLYmKVut_E8nkno1iUg2mOrqNJRrnU5QVZ/pubhtml?widget=true&amp;headers=false"></iframe>
-    </div>
-  );
+    <BrowserRouter>
+        <div className="App">
+            <Navbar />
+            <Router />
+            <Footer />
+        </div>
+    </BrowserRouter>
+  )
 }
 
 export default App;
