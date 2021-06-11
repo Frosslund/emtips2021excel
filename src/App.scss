@@ -60,12 +60,22 @@ $blue: #004bb4;
 .start-page {
     margin-top: 2rem;
     h2 {
-        font-size: 80px;
+        font-size: 50px;
+        text-decoration: underline;
     }
     color: $color-light;
     text-align: center;
     font-size: 200px;
     text-shadow: 0.1rem 0.1rem 0.3rem $color-dark, 0 0 4rem $color-dark;
+
+    li {
+        font-size: 20px;
+        margin-bottom: 0.5rem;
+    }
+
+    span {
+        margin: 2rem;
+    }
 
     @media screen and (max-width: 600px) {
         h2 {
