@@ -125,6 +125,7 @@ def downloadCompleteStatsDoc():
 
 def whoHasResult(matchIdx, result):
     df = loadPickle("allStatsTipsUpdated")
+    print(result)
     for key in df.keys():
         r = df[key]['matches'][matchIdx]
         res = r[2] + "-" + r[3]
@@ -205,7 +206,7 @@ def updateTopScorers():
     print("Updates scores saved.")
 
 
-# getStatsFromMatch(12)
+# getStatsFromMatch(13)
 # downloadCompleteStatsDoc()
 updateTopScorers()
-#whoHasResult(18, '1-0')
+#whoHasResult(13, '2-2')
