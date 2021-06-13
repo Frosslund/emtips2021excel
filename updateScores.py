@@ -123,6 +123,15 @@ def downloadCompleteStatsDoc():
     dumpPickle(dfStats, "allStatsTipsUpdated")
 
 
+def whoHasResult(matchIdx, result):
+    df = loadPickle("allStatsTipsUpdated")
+    for key in df.keys():
+        r = df[key]['matches'][matchIdx]
+        res = r[2] + "-" + r[3]
+        if res == result:
+            print(df[key]['name'])
+
+
 def getStatsFromMatch(matchIdx):
     df = loadPickle("allStatsTipsUpdated")
     scores = {}
