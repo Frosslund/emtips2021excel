@@ -206,7 +206,7 @@ def updateTopScorers():
     print("Updates scores saved.")
 
 
-# getStatsFromMatch(13)
+# getStatsFromMatch(19)
 # downloadCompleteStatsDoc()
 updateTopScorers()
-#whoHasResult(13, '2-2')
+#whoHasResult(19, '0-2')
