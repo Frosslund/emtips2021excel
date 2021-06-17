@@ -86,10 +86,64 @@ $blue: #004bb4;
 }
 
 .blogg-page {
-    margin-top: 2rem;
+    width: 60%;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 6rem;
     h2 {
-        font-size: 80px;
+        font-size: 30px;
+        text-align: left;
+        margin-top: 0.4rem;
+        padding-left: 0.5rem;
+        margin-bottom: 1rem;
     }
+
+    #timepublish {
+        text-align: right;
+        font-size: 14px;
+        margin-bottom: 0.5rem;
+        margin-right: 0.3rem;
+    }
+
+    p {
+        font-size: 16px;
+        text-align: left;
+        padding-left: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    h4 {
+        font-size: 20px;
+        text-decoration: underline;
+        text-align: left;
+        padding-left: 3rem;
+    }
+
+    ol {
+        padding-left: 3rem;
+        margin-bottom: 1rem;
+    }
+
+    li {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .blogg_item {
+        margin-bottom: 2rem;
+    }
+
+    #author {
+        text-align: right;
+        padding-right: 4rem;
+        padding-bottom: 5rem;
+    }
+
+    a {
+        text-decoration: none;
+        color: $color-light;
+    }
+
     color: $color-light;
     text-align: center;
     font-size: 100px;

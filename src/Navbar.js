@@ -28,7 +28,7 @@ const Navbar = () => {
 					</li>
 					<li className="navbar__item">
 						<NavLink to="/blogg" className="navbar__link">
-							Lukas EM-blogg
+							EM-bloggen
 						</NavLink>
 					</li>
 				</ul>
