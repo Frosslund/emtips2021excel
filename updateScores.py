@@ -209,4 +209,4 @@ def updateTopScorers():
 # getStatsFromMatch(10)
 # downloadCompleteStatsDoc()
 updateTopScorers()
-#whoHasResult(11, '3-2')
+#whoHasResult(10, '0-2')
