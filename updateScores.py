@@ -94,33 +94,30 @@ def downloadCompleteStatsDoc():
         dfStats[sheet_idx]['roundofsixteen'] = []
         match_idx = 56
         while match_idx <= 63:
-            dfStats[sheet_idx]['roundofsixteen'].append(
-                curr_df.iloc[match_idx, 3])
-            dfStats[sheet_idx]['roundofsixteen'].append(
-                curr_df.iloc[match_idx, 5])
+            dfStats[sheet_idx]['roundofsixteen'].append([curr_df.iloc[match_idx, 3], curr_df.iloc[match_idx, 5], curr_df.iloc[match_idx, 6], str(
+                int(curr_df.iloc[match_idx, 8])), curr_df.iloc[match_idx, 9]])
             match_idx += 1
 
         dfStats[sheet_idx]['quarterfinals'] = []
         match_idx = 67
         while match_idx <= 70:
-            dfStats[sheet_idx]['quarterfinals'].append(
-                curr_df.iloc[match_idx, 3])
-            dfStats[sheet_idx]['quarterfinals'].append(
-                curr_df.iloc[match_idx, 5])
+            dfStats[sheet_idx]['quarterfinals'].append([curr_df.iloc[match_idx, 3], curr_df.iloc[match_idx, 5], curr_df.iloc[match_idx, 6], str(
+                int(curr_df.iloc[match_idx, 8])), curr_df.iloc[match_idx, 9]])
             match_idx += 1
 
         dfStats[sheet_idx]['semifinals'] = []
         match_idx = 74
         while match_idx <= 75:
-            dfStats[sheet_idx]['semifinals'].append(curr_df.iloc[match_idx, 3])
-            dfStats[sheet_idx]['semifinals'].append(curr_df.iloc[match_idx, 5])
+            dfStats[sheet_idx]['semifinals'].append([curr_df.iloc[match_idx, 3], curr_df.iloc[match_idx, 5], curr_df.iloc[match_idx, 6], str(
+                int(curr_df.iloc[match_idx, 8])), curr_df.iloc[match_idx, 9]])
             match_idx += 1
 
+        match_idx = 79
         dfStats[sheet_idx]['final'] = []
-        dfStats[sheet_idx]['final'].append(curr_df.iloc[79, 3])
-        dfStats[sheet_idx]['final'].append(curr_df.iloc[79, 5])
+        dfStats[sheet_idx]['final'].append([curr_df.iloc[match_idx, 3], curr_df.iloc[match_idx, 5], curr_df.iloc[match_idx, 6], str(
+            int(curr_df.iloc[match_idx, 8])), curr_df.iloc[match_idx, 9]])
 
-    dumpPickle(dfStats, "allStatsTipsUpdated")
+    dumpPickle(dfStats, "allStatsTipsUpdatedPreSixteen")
 
 
 def whoHasResult(matchIdx, result):
@@ -133,14 +130,14 @@ def whoHasResult(matchIdx, result):
             print(df[key]['name'])
 
 
-def getStatsFromMatch(matchIdx):
-    df = loadPickle("allStatsTipsUpdated")
+def getStatsFromMatch(matchIdx, part):
+    df = loadPickle("allStatsTipsUpdatedPreSixteen")
     scores = {}
     signs = {}
+    teams = {}
     for key in df.keys():
-        r = df[key]['matches'][matchIdx]
-        print(r[0])
-        print(r[1])
+        r = df[key][part][matchIdx]
+        curr_teams = r[0] + "-" + r[1]
         res = r[2] + "-" + r[3]
         s = r[4]
         if res in scores:
@@ -151,9 +148,14 @@ def getStatsFromMatch(matchIdx):
             signs[s] += 1
         else:
             signs[s] = 1
+        if curr_teams in teams:
+            teams[curr_teams] += 1
+        else:
+            teams[curr_teams] = 1
 
     print(scores)
     print(signs)
+    print(teams)
 
     scores_sorted = {k: v for k, v in sorted(
         scores.items(), key=lambda item: item[1], reverse=True)}
@@ -171,6 +173,23 @@ def getStatsFromMatch(matchIdx):
     fig.savefig(dpi=300, fname=f"scores_plot_{matchIdx}_2")
 
     print("Scores plot saved.")
+
+    teams_sorted = {k: v for k, v in sorted(
+        teams.items(), key=lambda item: item[1], reverse=True)}
+
+    print(teams_sorted)
+
+    x = np.array(list(teams_sorted.keys()))
+    y = np.array(list(teams_sorted.values()))
+    dims = (37, 13)
+    sns.set(font_scale=3)
+    fig, ax = plt.subplots(figsize=dims)
+    barp = sns.barplot(x=x, y=y, palette="mako", ax=ax)
+    fig = barp.get_figure()
+    ax.set_yticks(np.arange(0, max(list(teams_sorted.values()))+2))
+    fig.savefig(dpi=300, fname=f"teams_plot_{matchIdx}_2")
+
+    print("Teams plot saved.")
 
     x = np.array(list(signs.keys()))
     y = np.array(list(signs.values()))
@@ -206,7 +225,7 @@ def updateTopScorers():
     print("Updates scores saved.")
 
 
-# getStatsFromMatch(36)
+#getStatsFromMatch(1, 'roundofsixteen')
 # downloadCompleteStatsDoc()
 updateTopScorers()
 #whoHasResult(10, '0-2')
