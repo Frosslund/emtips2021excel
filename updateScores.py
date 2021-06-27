@@ -181,7 +181,7 @@ def getStatsFromMatch(matchIdx, part):
 
     x = np.array(list(teams_sorted.keys()))
     y = np.array(list(teams_sorted.values()))
-    dims = (37, 13)
+    dims = (90, 40)
     sns.set(font_scale=3)
     fig, ax = plt.subplots(figsize=dims)
     barp = sns.barplot(x=x, y=y, palette="mako", ax=ax)
@@ -225,7 +225,7 @@ def updateTopScorers():
     print("Updates scores saved.")
 
 
-#getStatsFromMatch(1, 'roundofsixteen')
+#getStatsFromMatch(2, 'roundofsixteen')
 # downloadCompleteStatsDoc()
 updateTopScorers()
 #whoHasResult(10, '0-2')
