@@ -130,6 +130,37 @@ def whoHasResult(matchIdx, result):
             print(df[key]['name'])
 
 
+def whoHasFinal(team1, team2):
+    df = loadPickle("allStatsTipsUpdatedPreSixteen")
+    num = 0
+    for key in df.keys():
+        final = df[key]['final'][0]
+        if (final[0] == team1 and final[1] == team2):
+            print(df[key]['name'])
+        if (final[0] == team2 and final[1] == team1):
+            print(df[key]['name'])
+
+
+def whoHasTeamInPhase(team, phase):
+    df = loadPickle("allStatsTipsUpdatedPreSixteen")
+    num = 0
+    if phase == 'winner':
+        for key in df.keys():
+            if df[key][phase] == team:
+                print(df[key]['name'])
+                num += 1
+    else:
+        for key in df.keys():
+            for game in df[key][phase]:
+                if (game[0] == team):
+                    print(df[key]['name'])
+                    num += 1
+                if (game[1] == team):
+                    print(df[key]['name'])
+                    num += 1
+    print(num)
+
+
 def getStatsFromMatch(matchIdx, part):
     df = loadPickle("allStatsTipsUpdatedPreSixteen")
     scores = {}
@@ -229,3 +260,4 @@ def updateTopScorers():
 # downloadCompleteStatsDoc()
 updateTopScorers()
 #whoHasResult(10, '0-2')
+#whoHasFinal('Portugal', 'Frankrike')
