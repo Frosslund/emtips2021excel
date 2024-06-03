@@ -4,7 +4,8 @@ const BloggView = () => {
     return (
         <div className="blogg-page">
             <div className="blogg-item">
-                <p id="timepublish">Publicerad: 17 juni 14:12 </p>
+                <h2>Blogg kommer snart! Om du önskar att vara skribent under mästerskapet, anmäl dig till ledningsgruppen.</h2>
+                {/* <p id="timepublish">Publicerad: 17 juni 14:12 </p>
                 <hr />
                 <h2>Torsdagmorgon 17e juni.</h2>
 
@@ -36,7 +37,7 @@ const BloggView = () => {
                     <li>Turkiet</li>
                 </ol>
 
-                <p id="author"><i class="fas fa-pencil-alt"></i>: <strong>Per Kivijärvi</strong> <a href = "mailto: perolofkivijarvi@gmail.com"><i class="far fa-envelope"></i></a></p>
+                <p id="author"><i class="fas fa-pencil-alt"></i>: <strong>Per Kivijärvi</strong> <a href = "mailto: perolofkivijarvi@gmail.com"><i class="far fa-envelope"></i></a></p> */}
             </div>
         </div>
     )

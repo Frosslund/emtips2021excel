@@ -22,7 +22,7 @@ const Navbar = () => {
 						</NavLink>
 					</li>
                     <li className="navbar__item">
-						<a rel="noreferrer" target="_blank" href="https://docs.google.com/spreadsheets/d/1yAKozFLtn03rTj9ByB0aulmebP0_U1TAsGz538zAY0w/edit#gid=1817944953" className="navbar__link">
+						<a rel="noreferrer" target="_blank" href="https://docs.google.com/spreadsheets/d/1BgP_mbAc7kn1rxV6_ROBbG-WOoVBX5hD5xfgFbqxQDU/edit?usp=sharing" className="navbar__link">
 							Till tipset (Google)
 						</a>
 					</li>

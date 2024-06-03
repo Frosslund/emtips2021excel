@@ -5,7 +5,7 @@ export class Countdown extends Component {
 
     render() {
         return (
-            <DateCountdown dateTo='June 11, 2021 21:00:00 GMT+01:00' numberOfFigures={4}/>
+            <DateCountdown dateTo='June 14, 2024 21:00:00 GMT+01:00' numberOfFigures={4}/>
         )
     }
 }
