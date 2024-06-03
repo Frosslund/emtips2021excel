@@ -7,7 +7,7 @@ const Navbar = () => {
     return (
 		<header className="navbar">
 			<NavLink to="/" className="navbar__logo">
-				<span>EM-tips 2021</span>
+				<span>EM-tips 2024</span>
 			</NavLink>
 			<nav>
 				<ul className="navbar__links">
