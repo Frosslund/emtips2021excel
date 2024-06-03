@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from "react-router-dom";
-import DateCountdown from "react-date-countdown-timer";
 
 const BeforeView = () => {
   const calculateTimeLeft = () => {

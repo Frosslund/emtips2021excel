@@ -1,5 +1,4 @@
 import { Route, Switch } from 'react-router-dom';
-import StartView from './StartView';
 import TipsView from './TipsView';
 import BloggView from './BloggView';
 import ReglerView from './ReglerView';
