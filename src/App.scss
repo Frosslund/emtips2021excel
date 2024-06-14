@@ -108,6 +108,13 @@ $blue: #004bb4;
     margin-right: 0.3rem;
   }
 
+  .answer {
+    list-style-type: none;
+    margin-left: 40px;
+    font-style: italic;
+    margin-bottom: 20px;
+  }
+
   p {
     font-size: 16px;
     text-align: left;
@@ -130,6 +137,10 @@ $blue: #004bb4;
   li {
     font-size: 16px;
     text-align: left;
+  }
+
+  .question {
+    font-weight: bold;
   }
 
   .blogg_item {

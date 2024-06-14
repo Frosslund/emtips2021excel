@@ -27,8 +27,8 @@ const ReglerView = () => {
                     <li>Europamästare: 20 poäng</li>
                     <li>Lag som gör flest mål i gruppspelet: 10 poäng</li>
                     <li>Lag som släpper in flest mål i gruppspelet: 10 poäng</li>
-                    <li>Bonus 1: 15 poäng</li>
-                    <li>Bonus 2: 15 poäng</li>
+                    <li>Antal röda kort i turneringen: 15 poäng</li>
+                    <li>Antal matcher som går till förlängning: 15 poäng</li>
                 </ul>
             </div>
             <div className="item last">
