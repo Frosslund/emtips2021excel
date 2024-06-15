@@ -29,7 +29,6 @@ const StartView = () => {
     };
 
     fetchData();
-    console.log(data);
     // Optionally, you can set an interval to refresh the data periodically
     const intervalId = setInterval(fetchData, 30000); // Refresh every 30 seconds
 
