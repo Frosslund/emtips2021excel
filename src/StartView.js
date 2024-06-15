@@ -1,38 +1,79 @@
-import myData from './scores.json';
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
+const API_KEY = process.env.REACT_APP_SHEET_API_KEY;
 
 const StartView = () => {
+  const [data, setData] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
-    let scores = myData.scores
+  const SHEET_ID = "1BgP_mbAc7kn1rxV6_ROBbG-WOoVBX5hD5xfgFbqxQDU";
+  const RANGE = "Resultat & Tabell!GJ4:GK71";
 
-    function compare( a, b ) {
-        if ( a.points < b.points ){
-          return 1;
-        }
-        if ( a.points > b.points ){
-          return -1;
-        }
-        if ( a.name < b.name ){
-            return -1;
-          }
-          if ( a.name > b.name ){
-            return 1;
-          }
-        return 0;
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        setLoading(true);
+        const response = await axios.get(
+          `https://sheets.googleapis.com/v4/spreadsheets/${SHEET_ID}/values/${RANGE}?key=${API_KEY}`
+        );
+        setData(response.data.values);
+        setLoading(false);
+        setError(false);
+      } catch (error) {
+        setError(true);
+        setLoading(false);
+        console.error("Error fetching data:", error);
       }
+    };
 
-    return (
-        <div className="start-page">
-            <h2>TOPPLISTA</h2>
-            <ol>
-                {scores.sort(compare).map((participant, index) => {
-                    return (
-                        <li key={index}>{index+1}: {participant.name}: {participant.points} poäng</li>
-                    )
-                })}
-            </ol>
-            <span></span>
-        </div>
-    )
-}
+    fetchData();
+    console.log(data);
+    // Optionally, you can set an interval to refresh the data periodically
+    const intervalId = setInterval(fetchData, 30000); // Refresh every 30 seconds
 
-export default StartView
+    return () => clearInterval(intervalId);
+  }, []);
+
+  return (
+    <div className="start-page">
+      <div className="top-list">
+        <h2>TOPPLISTA</h2>
+        {loading ? (
+          <div className="loader"></div>
+        ) : (
+          <ol>
+            {error ? (
+              <p style={{ fontSize: "20px" }}>Kunde inte hämta data</p>
+            ) : (
+              data.map((participant, index) => {
+                let topThree = index < 3;
+                return (
+                  <li
+                    key={index}
+                    style={{
+                      fontSize: topThree ? "24px" : "20px",
+                      fontWeight: topThree ? "bold" : "normal",
+                    }}
+                    className="top-list-item"
+                  >
+                    <span style={{ paddingLeft: topThree ? "0" : "6px" }}>
+                      {!topThree && index + 1 + ". "}
+                      {index < 1 && "🥇 "}
+                      {index === 1 && "🥈 "}
+                      {index === 2 && "🥉 "}
+                      {participant[0]}
+                    </span>{" "}
+                    <span>{participant[1]} poäng </span>
+                  </li>
+                );
+              })
+            )}
+          </ol>
+        )}
+      </div>
+    </div>
+  );
+};
+export default StartView;
