@@ -2,14 +2,13 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 
 const API_KEY = process.env.REACT_APP_SHEET_API_KEY;
+const SHEET_ID = "1BgP_mbAc7kn1rxV6_ROBbG-WOoVBX5hD5xfgFbqxQDU";
+const RANGE = "Resultat & Tabell!GJ4:GK71";
 
 const StartView = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(false);
-
-  const SHEET_ID = "1BgP_mbAc7kn1rxV6_ROBbG-WOoVBX5hD5xfgFbqxQDU";
-  const RANGE = "Resultat & Tabell!GJ4:GK71";
 
   useEffect(() => {
     const fetchData = async () => {
@@ -30,7 +29,7 @@ const StartView = () => {
 
     fetchData();
     // Optionally, you can set an interval to refresh the data periodically
-    const intervalId = setInterval(fetchData, 30000); // Refresh every 30 seconds
+    const intervalId = setInterval(fetchData, 180000); // Refresh every 3rd minute
 
     return () => clearInterval(intervalId);
   }, []);
@@ -52,7 +51,7 @@ const StartView = () => {
                   <li
                     key={index}
                     style={{
-                      fontSize: topThree ? "24px" : "20px",
+                      fontSize: topThree ? "22px" : "18px",
                       fontWeight: topThree ? "bold" : "normal",
                     }}
                     className="top-list-item"
