@@ -3,6 +3,39 @@ import React from 'react'
 const BloggView = () => {
     return (
         <div className="blogg-page">
+            <div className='blogg-item'>
+                <p id="timepublish">Publicerad: 29 juni 08:45 </p>
+                <hr />
+                <h2>Ett oväntat gruppspel</h2>
+                <p>
+                Gruppspelet i EM 2024 är över. En intensiv period med ett tätt matchande bryts nu av med välbehövlig vila, både för tippare och spelare.
+                <br /><br />
+                Den stora snackisen senaste dagarna har varit hur många lag som egentligen ska spela i EM. UEFA och FIFA vill att så många lag som möjligt ska delta i deras turneringar. Pengarna ska in. Farhågan blir att slutspelen urvattnas, kvalitén blir lidande och vi får matcher som är för ojämna. Detta år kan man dock lätt konstatera att UEFAs beslut att utöka turneringen varit lyckat. Nivån på fotbollen har varit bra, inga lag har fallit ur ramarna. De förmodat sämsta lagen har stuckit upp och visat att de kan hålla jämna steg med stornationerna.
+                <br /><br />
+                När konsensus blivit att 24 lag absolut inte drar ner klassen på turneringen dök en annan åsikt upp: “hur kan vi ha grupptreor som går vidare?” Raseriet över att grupptreor går vidare saknar gränser. Istället för att återgå till 16 lag vill nu många ha 32 lag i nästa mästerskap för att slippa se grupptreorna vidare. Dessa stackars jävla grupptreor. Vad mycket skit de fått! Jag har svårt att förstå vreden och jag köper inte argumenten. Att det är svårt att tyda slutspelsträdet ser jag inte som ett problem. Trädet lappas ihop när alla matcher är spelade. I VM har det i många år varit vanligt förekommande att bästa treor går vidare, inte minst det VM 1994 som den här nationen håller så kärt. Att utöka nästa EM-slutspel till 32 lag tror jag inte är rätt väg att gå för UEFA. 24 lag har varit kanon, någon typ av prestation för att kvala in till ett mästerskap måste krävas.
+                <br /><br />
+                Nog om det. Oavsett vad vi säger, oavsett vad vi tycker, så vet vi att pamparna bestämmer. Till något roligare..
+                <br /><br />
+                <strong>I tipset</strong> har vi en ny ledare. Sanslösa Jonny Frösslund har blivit ikapp-, och omsprungen, av både Daniel Barreira och Adam Blixt. Daniel och Adam lyckades pricka in Tyskland som bästa målgörare i gruppspelet. Daniel och Adam 10 poäng. Men det är fortfarande en lång väg kvar och vi ska inte räkna bort Frösslund som har en stark “bracket” i slutspelet.
+                <br /><br />
+                Två tippare utöver ovan nämnda fick rätt på Tyskland flest mål: Matilda Svensson och Christoffer Olausson.
+                <br /><br />
+                Annars var det bara en deltagare som satte Skottland att släppa in flest mål, Kenneth Runnman. App: låd.
+                <br /><br />
+                När det kommer till rätt lag i åttondel så fick Adrian Brånemark och Stefan Garnbeck in flest lag korrekt med 14 av 16 lag. Här har vi två att hålla ögonen på när det ska avgöras.
+                <br /><br />
+                Sett till det som utövas på planen så kan vi konstatera att kampen om skytteligan lever. Flest mål har Georgiens <strong>Georges Mikautadze</strong> gjort, han står på tre fullträffar. Utan att faktakolla vågar jag som kille gissa på att ingen av tipparna har honom som skyttekung. Stämmer inte det har jag golat mig själv.
+                <br /><br />
+                Spanien har imponerat och varit bättre än många trodde innan. Österrike har enligt många varit bäst och det känns lite lättare som svensk när det var laget vi förlorade mot i kvalet. Vi som var på Ernst Happel Stadion förra sommaren glömmer dock inte den bittra förlusten.
+                <br /><br />
+                Andra saker som är värda att nämna från gruppspelet är Italiens sena avgörande, Mbappés nässkada, Modrić sista uppvisning (?), Ronaldos måltorka, Lukakus måltorka, Englands uselhet, Lewandowskis deppiga straff, Rumänien, Georgien, Slovakien och Slovenien.
+                <br /><br />
+                Summerat så har gruppspelet varit händelserikt och underhållande. Den stora spänningen kanske har uteblivit men det kommer i knockoutmatcherna.
+                <br /><br />
+                Häng med in i slutspelet, vi har med ett super-EM att göra med!
+                <br /><br />
+                </p>
+            </div>
             <div className="blogg-item">
                 <p id="timepublish">Publicerad: 17 juni 13:14 </p>
                 <hr />
