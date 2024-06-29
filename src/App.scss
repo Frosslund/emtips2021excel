@@ -271,15 +271,14 @@ li {
 
 //-----------Navbar Styles------------
 .navbar {
-  //font-family: "Circular", Helvetica, sans-serif;
   font-weight: bold;
   font-style: normal;
-  //font-weight: 900;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 5%;
   background-color: rgba(0, 0, 0, 0.6);
+  position: relative;
 
   i {
     font-size: 2rem;
@@ -294,16 +293,12 @@ li {
       width: 100%;
       padding: 12px 24px;
       margin: 0 50px;
-
       background-color: transparent;
       transition: transform 250ms ease-in-out;
       font-size: 14px;
       line-height: 18px;
-
       color: $color-light;
       background-color: transparent;
-      /*         background-image: url(http://mihaeltomic.com/codepen/input-search/ic_search_black_24px.svg); */
-
       background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='24' height='24' viewBox='0 0 24 24'%3E%3Cpath d='M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z'/%3E%3Cpath d='M0 0h24v24H0z' fill='none'/%3E%3C/svg%3E");
       background-repeat: no-repeat;
       background-size: 18px 18px;
@@ -313,7 +308,6 @@ li {
       transition: all 250ms ease-in-out;
       backface-visibility: hidden;
       transform-style: preserve-3d;
-      //font-family: "Inconsolata", sans-serif;
       font-weight: normal;
       font-size: 1rem;
 
@@ -350,12 +344,11 @@ li {
     color: $color-light;
     list-style: none;
     text-decoration: none;
-    //text-shadow: 0 0 10rem $color-light, 0.1rem 0.1rem 0.5rem $color-dark;
+    text-align: center;
   }
 
   &__links {
     list-style: none;
-    //text-shadow: 0 0 10rem $color-light, 0.1rem 0.1rem 0.5rem $color-dark;
   }
 
   &__item {
@@ -374,7 +367,58 @@ li {
   &__link:hover {
     color: $color-green;
   }
+
+  &__toggle {
+    display: none;
+    font-size: 2rem;
+    background: none;
+    border: none;
+    color: $color-light;
+    cursor: pointer;
+  }
+
+  &__nav {
+    display: flex;
+  }
+
+  @media (max-width: 768px) {
+    &__toggle {
+      display: flex;
+      align-items: center;
+      height: 100%;
+    }
+
+    &__nav {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    &__nav--open {
+      display: flex;
+      width: auto;
+      position: absolute;
+      top: 76px;
+      right: 0;
+      background-color: rgba(0, 0, 0, 0.6);
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    &__links {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__item {
+      display: block;
+      padding: 10px 0;
+      text-align: center;
+    }
+  }
 }
+
 //-----------Search Result Styles------------
 .gallery {
   display: grid;
@@ -639,6 +683,10 @@ li {
     display: flex;
     justify-content: space-between;
     width: 30rem;
+
+    @media screen and (max-width: 600px) {
+      width: 22rem;
+    }
 
     span {
       margin: 0;
